@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krótki Link</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script>
+        function copyToClipboard() {
+            const text = document.getElementById('processed-text').innerText;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Tekst skopiowany do schowka');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Krótki Link</h1>
+        <pre id="processed-text">{{ processed_text }}</pre>
+        <button onclick="copyToClipboard()">Kopiuj do schowka</button>
+    </div>
+    <div class="footer">
+        made by harylak
+    </div>
+</body>
+</html>

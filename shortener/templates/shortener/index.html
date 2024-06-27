@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krótki Link</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Krótki Link</h1>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="original_text" placeholder="Wklej tekst" required></textarea>
+            <button type="submit">Skróć</button>
+        </form>
+    </div>
+    <div class="footer">
+        made by harylak
+    </div>
+</body>
+</html>
